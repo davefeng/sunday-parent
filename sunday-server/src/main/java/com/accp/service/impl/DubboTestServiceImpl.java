@@ -10,6 +10,6 @@ import com.accp.service.DubboTestService;
 public class DubboTestServiceImpl implements DubboTestService {
 	@Override
 	public String getMessage(String name) {
-		return "hello world!";
+		return name;
 	}
 }
