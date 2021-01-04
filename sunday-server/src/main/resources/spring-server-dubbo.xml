@@ -6,12 +6,12 @@
                            http://code.alibabatech.com/schema/dubbo
                            http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 提供方应用信息 -->
-    <dubbo:application name="dubboConsumer"/>
+    <dubbo:application name="dubboProvider"/>
     <!-- 使用zookeeper注册中心暴露服务地址，可配置集群逗号分隔 -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://192.168.61.1:2181"/>
     <!-- 使用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" threads="10"/>
 
-    <!-- 生成远程服务代理 -->
-    <dubbo:reference interface="com.accp.service.DubboTestService" id="dubboTestService"/>
+    <!-- 声明需要暴露的服务接口 若comuser未设置,则默认使用provider配置:超时3s, 随机负债策略, 调用最大并发数200,则阻塞-->
+    <dubbo:service interface="com.accp.service.DubboTestService" ref="dubboTestServiceImpl" version="1.0" timeout="600000" retries="2" loadbalance="random" executes="200"/>
 </beans>

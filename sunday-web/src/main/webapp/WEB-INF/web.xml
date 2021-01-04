@@ -13,6 +13,16 @@
   </context-param>
   <!--配置监听器结束-->
 
+  <listener>
+    <listener-class>
+      org.springframework.web.util.Log4jConfigListener
+    </listener-class>
+  </listener>
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+
   <!-- springmvc配置开始 -->
   <servlet>
     <servlet-name>springMVC</servlet-name>

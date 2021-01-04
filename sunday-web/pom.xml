@@ -66,6 +66,14 @@
         </dependency>
         <!-- dubbo结束 -->
 
+        <!-- Error creating bean with name 'mvcContentNegotiationManager'报错时需要引入的依赖开始 -->
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>5.5.23</version>
+        </dependency>
+        <!-- Error creating bean with name 'mvcContentNegotiationManager'报错时需要引入的依赖结束 -->
+
     </dependencies>
 
     <build>
